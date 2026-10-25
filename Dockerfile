@@ -1,9 +1,9 @@
 FROM       zot.jamet.me/docker-hub/library/python:3.10-alpine
 
-RUN        pip install pycodestyle==2.0.0
+RUN        pip install pycodestyle==2.1.0
 # pycodestyle is the successor of pep8; the image keeps its `pep8` command.
 RUN        ln -s "$(command -v pycodestyle)" /usr/local/bin/pep8
-# pycodestyle 2.0.0 still warns on every run on Python >= 3.7 (FutureWarning:
+# pycodestyle 2.1.0 still warns on every run on Python >= 3.7 (FutureWarning:
 # "Possible nested set" from its regexes). Keep the lint output clean.
 ENV        PYTHONWARNINGS=ignore::FutureWarning:pycodestyle,ignore::DeprecationWarning:pycodestyle
 ENTRYPOINT ["pep8"]
