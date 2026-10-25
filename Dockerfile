@@ -1,4 +1,4 @@
-FROM       zot.jamet.me/docker-hub/library/python:3.7-alpine
+FROM       zot.jamet.me/docker-hub/library/python:3.8-alpine
 
 RUN        pip install pep8==1.7.1
 # pep8 1.7.1 warns on every run: UserWarning (pep8 is now pycodestyle) and, since
