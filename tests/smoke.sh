@@ -8,8 +8,10 @@ set -u
 image=${1:?usage: smoke.sh <image>}
 dir=$(cd "$(dirname "$0")" && pwd)
 
+# Fixtures go through stdin, not a bind mount: on a runner whose docker daemon
+# is a sidecar, a mounted path is not visible to the daemon.
 run() {
-  docker run --rm -v "$dir:/src:ro" -w /src "$image" "$@" 2>&1
+  docker run --rm -i "$image" - < "$dir/$1" 2>&1
 }
 
 out=$(run clean.py)
