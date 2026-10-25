@@ -46,4 +46,4 @@ jobs:
           tags: docker-pep8:ci
 
       - name: Smoke test
-        run: docker run --rm docker-pep8:ci --version
+        run: sh tests/smoke.sh docker-pep8:ci
