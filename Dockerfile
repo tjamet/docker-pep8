@@ -1,4 +1,4 @@
-FROM       zot.jamet.me/docker-hub/library/python:3.5-alpine
+FROM       zot.jamet.me/docker-hub/library/python:3.6-alpine
 
 RUN        pip install pep8==1.7.1
 # 1.7.1 warns on every run that pep8 is now pycodestyle; keep the lint output clean.
