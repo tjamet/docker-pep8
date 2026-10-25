@@ -1,4 +1,4 @@
-FROM       zot.jamet.me/docker-hub/library/python:3.12-alpine
+FROM       zot.jamet.me/docker-hub/library/python:3.13-alpine
 
 RUN        pip install pycodestyle==2.15.0
 # pycodestyle is the successor of pep8; the image keeps its `pep8` command.
